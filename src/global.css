@@ -31,7 +31,7 @@ gold: '#C6B378' */
   transition: all 1s ease;
 }
 @keyframes slide-fly {
-  from{
+  from {
     transform: translateX(100px);
     opacity: 0.2;
   }
@@ -49,7 +49,7 @@ gold: '#C6B378' */
 }
 
 @keyframes flyup {
-  from{
+  from {
     transform: translateY(100px);
     opacity: 0.2;
   }
@@ -74,6 +74,15 @@ gold: '#C6B378' */
   justify-content: center;
   background-color: whitesmoke;
 }
+
+.reservation {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #f04527;
+  text-align: center;
+}
+
 .row {
   width: 100%;
   display: flex;
@@ -84,7 +93,7 @@ gold: '#C6B378' */
 .col {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 50%;
   margin-bottom: 10px;
 }
 input {
@@ -94,17 +103,35 @@ input {
   border: 1px solid lightgray;
   color: gray;
 }
-input:focus{
+input:focus {
   outline: none;
 }
 
-.label{
-  font-size: 18px;
-  font-weight: bold;
-  color: #F57325;
+select {
+  height: 30px;
+  padding: 0 10px;
+  background-color: transparent;
+  border: 1px solid lightgray;
+  color: gray;
+  width: 50%;
+}
+select:focus {
+  outline: none;
+}
+option {
+  height: 30px;
+  font-size: 16px;
 }
 
-label{color: gray;}
+.label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f57325;
+}
+
+label {
+  color: gray;
+}
 
 .radio {
   display: flex;
@@ -117,17 +144,52 @@ label{color: gray;}
   border-bottom: 1px solid lightgray;
 }
 
-.subtotal > input:focus{
+.subtotal > input:focus {
   outline: none;
 }
 
-h3{
+.submit {
+  border: none;
+  background-color: #f57325;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 50%;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  margin-left: 30px;
+  margin-top: 5px;
+  background-color: rgba(0, 0, 0, 0.788);
+  color: white;
+  text-align: center;
+  padding: 4px;
+  width: 70%;
+  visibility: hidden;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.submit:disabled {
+  background-color: #f5752591;
+  cursor: default;
+}
+.submit:disabled:hover .tooltip {
+  visibility: visible;
+}
+
+h3 {
   margin-top: 20px;
-  color: #F04527;
+  color: #f04527;
+  padding: 10px;
 }
 
 .footer {
-  background-color: #F57325;
+  background-color: #f57325;
   opacity: 0.7;
   text-align: center;
   height: 40px;
@@ -138,54 +200,392 @@ h3{
   font-size: 14px;
 }
 
+/* gateway */
+.gateway {
+  overflow-x: hidden;
+}
+.gatewayTop {
+  height: 50px;
+  padding: 20px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: lightgray;
+
+  /* background-color: #f04527; */
+}
+
+.gatewayTopImg {
+  /* width: 200px; */
+  flex: 1;
+}
+.gatewayTopImg > img {
+  width: 200px;
+}
+
+.gatewayTopLink {
+  flex: 1;
+}
+.gatewayTopLink > ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  cursor: pointer;
+}
+
+.gateStart {
+  background-color: whitesmoke;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 150px);
+}
+
+.gateStartLeft {
+  flex: 1;
+  background-image: url("https://www.bajajallianz.com/content/dam/bagic/travel-insurance/corporate-insurance/Corporate-Travel-Insurance.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.gateStartLeft > h1 {
+  width: 80%;
+  font-size: 4em;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+.gateStartLeft > p {
+  width: 75%;
+  margin-top: 30px;
+  font-size: 1.3em;
+  text-transform: capitalize;
+}
+
+.gateStartRight {
+  flex: 1;
+}
+.gateStartRight > img {
+  border-radius: 50%;
+  width: 70%;
+}
+
+.gateDestination {
+  padding: 50px;
+  background-color: whitesmoke;
+}
+.gateDestination > h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.gateDestinationDet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.gateDestinationDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  width: 300px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 6px 27px -7px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 0px 6px 27px -7px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 0px 6px 27px -7px rgba(0, 0, 0, 0.36);
+}
+
+.gateDestinationDetail > img {
+  width: 100%;
+  height: 200px;
+  border-radius: 20px 20px 0 0;
+}
+.gateDestinationDetail > p,
+h2 {
+  width: 80%;
+  padding: 20px;
+}
+
+.detailExtra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 80%;
+}
+
+.detailExtra > p > span {
+  color: #f04527;
+  font-size: 22px;
+}
+
+.detailBtn {
+  background-color: #f04527;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.bookNextTrip {
+  background-color: whitesmoke;
+  padding: 50px;
+}
+
+.bookNextTrip > h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+  font-size: 2.5em;
+  opacity: 0.8;
+}
+
+.bookNextTripDet {
+  display: flex;
+  align-items: center;
+}
+
+.bookNextTripLeft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bookNextTripLeft > h4 {
+  font-size: 1.6em;
+  opacity: 0.8;
+  margin: 10px;
+}
+
+.bookNextTripLeft > p {
+  font-size: 1em;
+  opacity: 0.8;
+  margin: 10px;
+}
+
+.bookNextTripRight {
+  flex: 1;
+}
+
+.bookNextTripRight > img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+/* soon */
+.soon {
+  font-size: 3em;
+  padding: 20px;
+}
+
 @media screen and (max-width: 1200px) {
-  .topBody > h1{
+  .topBody > h1 {
     font-size: 3em;
     width: 90%;
   }
-  .topBody > p{
+  .topBody > p {
     font-size: 1.4em;
     width: 95%;
     margin-top: 20px;
-    text-align: justify;
+  }
+  .submit {
+    width: 100%;
+  }
+
+  /* gateway */
+  .gateStart {
+    flex-direction: column;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("https://www.bajajallianz.com/content/dam/bagic/travel-insurance/corporate-insurance/Corporate-Travel-Insurance.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .gateStartLeft {
+    flex: 1;
+    background-image: none;
+  }
+
+  .gateStartRight > img {
+    display: none;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .topBody > h1{
+  .topBody > h1 {
     font-size: 2.5em;
     width: 96%;
   }
-  .topBody > p{
+  .topBody > p {
     font-size: 1.2em;
     width: 95%;
     margin-top: 20px;
-    text-align: justify;
   }
 
-  
-  h3{
+  .col {
+    width: 70%;
+  }
+
+  .submit {
+    width: 100%;
+  }
+
+  h3 {
     text-align: center;
+  }
+
+  /* gateway */
+  .gateStart {
+    flex-direction: column;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("https://www.bajajallianz.com/content/dam/bagic/travel-insurance/corporate-insurance/Corporate-Travel-Insurance.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .gateStartLeft {
+    flex: 1;
+    background-image: none;
+  }
+  .gateStartLeft > h1 {
+    width: 95%;
+    font-size: 2em;
+  }
+  .gateStartLeft > p {
+    width: 85%;
+    text-align: center;
+  }
+
+  .gateStartRight > img {
+    display: none;
+  }
+
+  .gateDestination {
+    padding: 50px;
+    background-color: whitesmoke;
+  }
+  .gateDestination > h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
+
+  .gateDestinationDet {
+    flex-direction: column;
+  }
+
+  .bookNextTrip > h1 {
+    font-size: 2em;
+  }
+
+  .bookNextTripDet {
+    flex-direction: column;
+  }
+
+  .bookNextTripRight > img {
+    width: 100%;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .topBody > h1{
+  .topBody > h1 {
     font-size: 2em;
     width: 96%;
   }
-  .topBody > p{
+  .topBody > p {
     font-size: 1em;
     width: 95%;
     margin-top: 20px;
-    text-align: justify;
   }
 
-  .subtotal > input{
+  .col {
+    width: 80%;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .submit {
+    width: 100%;
+  }
+
+  .subtotal {
+    display: flex;
+    align-items: center;
+  }
+  .subtotal > input {
     margin-bottom: 10px;
+    width: 20%;
   }
 
-  h3{
+  h3 {
     text-align: center;
+  }
+
+  /* gateway */
+  .gatewayTopImg > img {
+    width: 100px;
+  }
+
+  .gateStart {
+    flex-direction: column;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("https://www.bajajallianz.com/content/dam/bagic/travel-insurance/corporate-insurance/Corporate-Travel-Insurance.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .gateStartLeft {
+    flex: 1;
+    background-image: none;
+  }
+  .gateStartLeft > h1 {
+    width: 95%;
+    font-size: 2em;
+  }
+  .gateStartLeft > p {
+    width: 85%;
+    text-align: center;
+  }
+
+  .gateStartRight > img {
+    display: none;
+  }
+
+  .gateDestination {
+    padding: 50px;
+    background-color: whitesmoke;
+  }
+  .gateDestination > h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
+
+  .gateDestinationDet {
+    flex-direction: column;
+  }
+
+  .bookNextTrip > h1 {
+    font-size: 2em;
+  }
+
+  .bookNextTripDet {
+    flex-direction: column;
+  }
+
+  .bookNextTripRight > img {
+    width: 100%;
   }
 }
